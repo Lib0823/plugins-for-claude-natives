@@ -6,6 +6,7 @@ A Claude Code plugin that speaks a short summary of Claude's response using macO
 
 - Summarizes Claude's response to 3-10 words using Claude Haiku
 - Speaks the summary aloud using macOS `say` command
+- **Korean/English auto-detection**: Uses Yuna voice for Korean, Samantha for English
 - Runs in background so it doesn't block Claude Code
 
 ## Requirements
@@ -42,12 +43,14 @@ pip3 install --user claude-agent-sdk
 ## Configuration
 
 The plugin uses these defaults:
-- Speech rate: 200 words per minute
+- Speech rate: 190 words per minute
 - Model: Claude Haiku (for fast summarization)
+- Korean voice: Yuna
+- English voice: Samantha
 
 ## Logs
 
-Logs are written to `/tmp/say-summary.log` for debugging.
+Logs are written to `/tmp/speak-hook.log` for debugging.
 
 ## License
 
