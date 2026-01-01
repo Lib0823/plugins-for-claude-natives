@@ -1,0 +1,16 @@
+{
+  "description": "Summarize and speak last Claude response",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/scripts/summarize-last-message.py",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

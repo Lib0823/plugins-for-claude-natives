@@ -1,0 +1,13 @@
+{
+  "name": "summarize-last-message",
+  "version": "1.0.0",
+  "description": "Speaks a short summary of Claude's response using macOS say command",
+  "author": {
+    "name": "Team Attention",
+    "url": "https://github.com/team-attention"
+  },
+  "repository": "https://github.com/team-attention/plugins-for-claude-natives",
+  "license": "MIT",
+  "keywords": ["accessibility", "audio", "tts", "macos"],
+  "hooks": "./hooks/hooks.json"
+}

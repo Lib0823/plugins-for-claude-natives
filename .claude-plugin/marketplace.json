@@ -1,0 +1,15 @@
+{
+  "name": "plugins-for-claude-natives",
+  "owner": {
+    "name": "Team Attention",
+    "url": "https://github.com/team-attention"
+  },
+  "plugins": [
+    {
+      "name": "summarize-last-message",
+      "source": "./plugins/summarize-last-message",
+      "description": "Speaks a short summary of Claude's response using macOS TTS",
+      "version": "1.0.0"
+    }
+  ]
+}
