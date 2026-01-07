@@ -189,6 +189,8 @@ Drop a YouTube URL and get a complete breakdown: summary, key insights, full Kor
 
 ### google-calendar
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Calendar_icon_%282020%29.svg/960px-Google_Calendar_icon_%282020%29.svg.png" width="120" alt="Google Calendar">
+
 **Manage multiple Google Calendar accounts from Claude Code.**
 
 Query, create, update, and delete events across multiple Google accounts (work, personal, etc.) with automatic conflict detection.
