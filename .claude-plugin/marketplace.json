@@ -30,6 +30,11 @@
       "name": "youtube-digest",
       "description": "Summarize YouTube videos with transcript, insights, Korean translation, and quizzes",
       "source": "./plugins/youtube-digest"
+    },
+    {
+      "name": "google-calendar",
+      "description": "Multi-account Google Calendar integration with parallel querying and conflict detection",
+      "source": "./plugins/google-calendar"
     }
   ]
 }
