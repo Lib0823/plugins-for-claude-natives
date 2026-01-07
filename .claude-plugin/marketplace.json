@@ -35,6 +35,11 @@
       "name": "google-calendar",
       "description": "Multi-account Google Calendar integration with parallel querying and conflict detection",
       "source": "./plugins/google-calendar"
+    },
+    {
+      "name": "dev",
+      "description": "Developer workflow tools for Claude Code",
+      "source": "./plugins/dev"
     }
   ]
 }
