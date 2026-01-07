@@ -14,7 +14,7 @@ version: 1.0.0
 - 찬반 의견 분포
 - 실무자들의 경험담
 - 숨겨진 우려사항이나 장점
-- 커뮤니티별 온도 차이
+- 독특하거나 주목할 만한 시각
 
 ## Data Sources
 
@@ -38,17 +38,14 @@ version: 1.0.0
 
 **Reddit** (Gemini CLI - WebFetch blocked):
 ```bash
-# 병렬로 3개 쿼리 실행 (주제에 맞게 쿼리 구성)
-gemini -p "{일반 검색: topic + site:reddit.com}" &
-gemini -p "{관련 서브레딧 2-3개 + topic}" &
-gemini -p "{다른 각도의 관련 서브레딧 + topic + opinions/thoughts}" &
-wait
+# 단일 Gemini 호출로 Reddit 검색 (명시적 검색 지시 필수)
+gemini -p "Search Reddit for discussions about {TOPIC}. Summarize the main opinions, debates, and insights from developers. Include Reddit post URLs where possible. Focus on: 1) Common opinions 2) Controversies 3) Notable perspectives from experienced developers."
 ```
 
-쿼리 구성 가이드:
-- 첫 번째: 일반 Reddit 검색
-- 두 번째: 주제에 가장 관련된 서브레딧들 (예: React → r/reactjs r/webdev)
-- 세 번째: 시니어/경험자 관점 서브레딧 (예: r/ExperiencedDevs) 또는 다른 관련 커뮤니티
+**주의사항**:
+- `site:reddit.com` 형식은 작동하지 않음 - Gemini가 검색 쿼리가 아닌 작업 요청으로 해석
+- 반드시 "Search Reddit for..." 형태로 명시적 검색 지시 필요
+- 단일 호출이 병렬 호출보다 안정적 (출력 혼재 방지)
 
 **Other Sources** (WebSearch, parallel):
 ```
@@ -57,7 +54,7 @@ WebSearch: "{topic} site:dev.to"
 WebSearch: "{topic} site:lobste.rs"
 ```
 
-**CRITICAL**: 4개 검색을 반드시 **하나의 메시지**에서 병렬로 실행.
+**CRITICAL**: 4개 검색을 반드시 **하나의 메시지**에서 병렬로 실행. Gemini는 단일 호출, WebSearch는 3개 병렬.
 
 ### Step 3: Synthesize & Present
 
@@ -79,6 +76,7 @@ WebSearch: "{topic} site:lobste.rs"
 - 2개 이상의 소스에서 동일한 포인트가 언급되면 공통 의견으로 분류
 - 특히 Reddit과 HN에서 동시에 언급되는 의견은 신뢰도 높음
 - 구체적인 수치나 사례가 포함된 의견 우선
+- **최소 5개 이상의 공통 의견** 도출 목표
 
 #### 3-3. 논쟁점(Controversy) 식별
 
@@ -87,6 +85,7 @@ WebSearch: "{topic} site:lobste.rs"
 - 같은 주제에 대해 상반된 의견이 존재하는 경우
 - 댓글에서 활발한 토론이 벌어진 스레드
 - "depends on...", "but actually..." 등의 반론이 많은 주제
+- **최소 3개 이상의 논쟁점** 식별 목표
 
 #### 3-4. 주목할 시각(Notable Perspective) 선별
 
@@ -96,36 +95,63 @@ WebSearch: "{topic} site:lobste.rs"
 - 시니어 개발자나 해당 분야 전문가의 의견
 - 실제 대규모 프로젝트 경험에서 나온 인사이트
 - 다른 사람들이 놓치기 쉬운 엣지 케이스나 장기적 관점
-
-#### 3-5. 커뮤니티별 온도 차이 정리
-
-각 플랫폼의 전반적인 분위기 요약:
-
-- Reddit: 전반적으로 긍정적/부정적/혼재?
-- HN: 기술적 깊이 있는 논의가 있었나?
-- Dev.to: 입문자 관점에서 어떤 반응?
-- Lobsters: 시니어들의 시각은?
+- **최소 3개 이상의 주목할 시각** 선별 목표
 
 ## Output Format
 
-```markdown
+**핵심 원칙**: 모든 의견에 출처를 인라인으로 붙인다. 출처 없는 의견은 포함하지 않는다.
 
+```markdown
 ## Key Insights
 
-**Consensus (공통 의견)**:
-- ...
+### Consensus (공통 의견)
 
-**Controversy (논쟁점)**:
-- ...
+1. **[의견 제목]**
+   - [구체적인 내용 설명]
+   - [추가 맥락이나 예시]
+   - Sources: [Reddit](url), [HN](url)
 
-**Notable Perspective (주목할 시각)**:
-- ...
+2. **[의견 제목]**
+   - [구체적인 내용]
+   - Source: [Dev.to](url)
+
+(최소 5개 이상)
 
 ---
 
-## Sources
-- [링크 목록...]
+### Controversy (논쟁점)
+
+1. **[논쟁 주제]**
+   - 찬성측: "[인용]" - [Source](url)
+   - 반대측: "[인용]" - [Source](url)
+   - 맥락: [왜 의견이 갈리는지]
+
+2. **[논쟁 주제]**
+   - ...
+
+(최소 3개 이상)
+
+---
+
+### Notable Perspective (주목할 시각)
+
+1. **[인사이트 제목]**
+   > "[원문 인용 또는 핵심 문장]"
+   - [왜 주목할 만한지 설명]
+   - Source: [Platform](url)
+
+2. **[인사이트 제목]**
+   - ...
+
+(최소 3개 이상)
 ```
+
+### 출처 표기 규칙
+
+- **인라인 링크 필수**: 모든 의견 끝에 `Source: [Platform](url)` 형식으로 붙임
+- **복수 출처**: 동일 의견이 여러 곳에서 언급되면 `Sources: [Reddit](url), [HN](url)`
+- **직접 인용**: 가능하면 원문을 `"..."` 형태로 인용
+- **URL 정확성**: 실제 접근 가능한 링크만 포함 (검색 결과에서 확인된 URL)
 
 ## Error Handling
 

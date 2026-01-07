@@ -9,5 +9,5 @@
   "repository": "https://github.com/team-attention/plugins-for-claude-natives",
   "license": "MIT",
   "keywords": ["claude-code", "plugin", "developer", "workflow", "productivity"],
-  "skills": "./skills/*"
+  "skills": "./skills/dev-scan"
 }
