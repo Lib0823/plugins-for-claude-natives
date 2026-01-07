@@ -1,22 +1,6 @@
 ---
 name: google-calendar
-description: |
-  This skill should be used when the user asks about their calendar, schedules, or upcoming events.
-
-  **조회 트리거**: "오늘 일정", "이번 주 일정", "내 캘린더 확인", "다음 미팅", "일정 충돌 확인",
-  "what's on my calendar", "show my schedule", "upcoming meetings", "check availability".
-
-  **생성 트리거**: "새 일정 만들어줘", "미팅 추가해줘", "내일 3시에 회의 잡아줘",
-  "create a meeting", "schedule an event", "add to my calendar".
-
-  **수정 트리거**: "일정 시간 변경해줘", "미팅 시간 바꿔줘", "회의 제목 수정해줘",
-  "reschedule the meeting", "update the event", "change meeting time".
-
-  **삭제 트리거**: "일정 삭제해줘", "미팅 취소해줘", "이벤트 지워줘",
-  "cancel the meeting", "delete the event", "remove from calendar".
-
-  여러 Google 계정(work, personal 등)을 병렬 조회하여 통합 일정을 제공한다.
-  저장된 refresh token 사용으로 매번 인증 불필요.
+description: Google 캘린더 일정 조회/생성/수정/삭제. "오늘 일정", "이번 주 일정", "미팅 추가해줘" 요청에 사용. 여러 계정(work, personal) 통합 조회 지원.
 ---
 
 # Google Calendar Sync

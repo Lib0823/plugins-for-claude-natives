@@ -1,11 +1,6 @@
 ---
 name: dev-scan
-description: >
-  This skill should be used when the user wants to gather diverse developer
-  opinions and community discussions about a technical topic. Triggers include:
-  "개발자 반응", "커뮤니티 의견", "개발자들 생각", "여러 의견 모아줘",
-  "what do developers think", "community opinions", "developer reactions",
-  "gather opinions from multiple sources".
+description: 개발 커뮤니티에서 기술 주제에 대한 다양한 의견 수집. "개발자 반응", "커뮤니티 의견", "developer reactions" 요청에 사용. Reddit, HN, Dev.to, Lobsters 등 종합.
 version: 1.0.0
 ---
 

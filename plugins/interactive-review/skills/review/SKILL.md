@@ -1,11 +1,6 @@
 ---
 name: review
-description: |
-  Interactive markdown review with web UI. Use when:
-  - User says "review this", "check this plan", "/review"
-  - User wants to give feedback on a plan or document
-  - User says "let me review", "피드백", "검토해줘"
-  - User specifies a file path to review (e.g., "review /path/to/file.md")
+description: Interactive markdown review with web UI. Use when user says "review this", "check this plan", "피드백", "검토해줘" or specifies a file path to review.
 allowed-tools:
   - mcp__interactive_review__start_review
   - Read

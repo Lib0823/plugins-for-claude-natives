@@ -49,7 +49,7 @@ A collection of Claude Code plugins for power users who want to extend Claude Co
 
 ### agent-council
 
-[![Demo](https://img.youtube.com/vi/ZUT_55FeQXM/maxresdefault.jpg)](https://youtu.be/ZUT_55FeQXM)
+![Demo](./assets/agent-council.gif)
 
 **Summon multiple AI models to debate your question and reach a consensus.**
 
@@ -74,7 +74,7 @@ User: "summon the council - should I use TypeScript or JavaScript for my new pro
 
 ### clarify
 
-[![Demo](https://img.youtube.com/vi/N50O5S3sOrA/maxresdefault.jpg)](https://youtu.be/N50O5S3sOrA)
+![Demo](./assets/clarify.gif)
 
 **Turn vague requirements into precise, actionable specifications.**
 
@@ -145,7 +145,7 @@ Instead of reading long markdown in the terminal, this plugin opens a browser-ba
 
 ### say-summary
 
-[![Demo](https://img.youtube.com/vi/UhKzXrB5v1g/maxresdefault.jpg)](https://youtu.be/UhKzXrB5v1g)
+![Demo](./assets/say-summary.gif)
 
 **Hear Claude's responses spoken aloud (macOS only).**
 
@@ -164,6 +164,8 @@ This plugin uses a Stop hook to summarize Claude's response to a short headline 
 ---
 
 ### youtube-digest
+
+![Demo](./assets/youtube-digest.jpeg)
 
 **Summarize YouTube videos with transcripts, translations, and comprehension quizzes.**
 
