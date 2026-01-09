@@ -1,13 +1,12 @@
 {
   "name": "dev",
-  "version": "1.0.0",
-  "description": "Developer workflow tools for Claude Code",
+  "version": "1.1.0",
+  "description": "Developer workflow tools: community scanning, technical decision-making",
   "author": {
     "name": "Team Attention",
     "url": "https://github.com/team-attention"
   },
   "repository": "https://github.com/team-attention/plugins-for-claude-natives",
   "license": "MIT",
-  "keywords": ["claude-code", "plugin", "developer", "workflow", "productivity"],
-  "skills": "./skills/dev-scan"
+  "keywords": ["claude-code", "plugin", "developer", "workflow", "productivity", "decision-making", "tech-decision"]
 }
