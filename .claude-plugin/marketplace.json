@@ -37,9 +37,9 @@
       "source": "./plugins/google-calendar"
     },
     {
-      "name": "dev",
-      "description": "Developer workflow tools for Claude Code",
-      "source": "./plugins/dev"
+      "name": "session-wrap",
+      "description": "Session wrap-up workflow with multi-agent analysis for documentation, automation, learning, and follow-up",
+      "source": "./plugins/session-wrap"
     }
   ]
 }
