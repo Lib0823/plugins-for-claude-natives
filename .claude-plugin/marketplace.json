@@ -40,6 +40,11 @@
       "name": "session-wrap",
       "description": "Session wrap-up workflow with multi-agent analysis for documentation, automation, learning, and follow-up",
       "source": "./plugins/session-wrap"
+    },
+    {
+      "name": "dev",
+      "description": "Developer workflow tools: community scanning, technical decision-making",
+      "source": "./plugins/dev"
     }
   ]
 }
