@@ -1,0 +1,13 @@
+{
+  "name": "weeds-meeting",
+  "version": "1.0.0",
+  "description": "WEEDS 회사의 표준 회의록 형식으로 회의 내용을 자동 작성하는 플러그인",
+  "author": {
+    "name": "Lib0823",
+    "url": "https://github.com/Lib0823"
+  },
+  "repository": "https://github.com/Lib0823/Claude-Skills",
+  "license": "MIT",
+  "keywords": ["claude-code", "plugin", "meeting-minutes", "weeds", "documentation", "korean"],
+  "skills": "./skills/weeds-meeting"
+}
